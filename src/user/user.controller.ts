@@ -7,5 +7,9 @@ import { UpdateUserDto } from './dto/update-user.dto';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
+  @Get(':id')
+  getById(@Param() id: string) {
+    return this.userService.getById(id)
+  }
   
 }
